@@ -1,6 +1,6 @@
 {
   "name": "adonis-binding-resolver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Resolves a closure or adonis ioc container binding transparently",
   "main": "index.js",
   "scripts": {

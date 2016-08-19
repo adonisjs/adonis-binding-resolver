@@ -31,12 +31,12 @@ const Resolver = require('adonis-binding-resolver')
 const Ioc = require('adonis-fold').Ioc
 const resolver = new Resolver(Ioc)
 
-Ioc.validateBinding('App/Http/Controllers/HomeController.index') // works fine
-Ioc.validateBinding(function () {}) // works fine
-Ioc.validateBinding(null) // throws exception
-Ioc.validateBinding({}) // throws exception
-Ioc.validateBinding('') // throws exception
-Ioc.validateBinding('App/Http/Controllers/HomeController') // throws exception, since method is not defined
+resolver.validateBinding('App/Http/Controllers/HomeController.index') // works fine
+resolver.validateBinding(function () {}) // works fine
+resolver.validateBinding(null) // throws exception
+resolver.validateBinding({}) // throws exception
+resolver.validateBinding('') // throws exception
+resolver.validateBinding('App/Http/Controllers/HomeController') // throws exception, since method is not defined
 ```
 
 
@@ -46,9 +46,9 @@ const Resolver = require('adonis-binding-resolver')
 const Ioc = require('adonis-fold').Ioc
 const resolver = new Resolver(Ioc)
 
-Ioc.resolveBinding('App/Http/Controllers/HomeController.index') // returns {instance: HomeController, method: 'index'}
+resolver.resolveBinding('App/Http/Controllers/HomeController.index') // returns {instance: HomeController, method: 'index'}
 
-Ioc.resolveBinding(function () {}) // returns function () {}
+resolver.resolveBinding(function () {}) // returns function () {}
 ```
 
 ## Execute Binding
@@ -60,9 +60,9 @@ const Resolver = require('adonis-binding-resolver')
 const Ioc = require('adonis-fold').Ioc
 const resolver = new Resolver(Ioc)
 
-Ioc.validateBinding('App/Http/Controllers/HomeController.index') // make sure binding is fine
+resolver.validateBinding('App/Http/Controllers/HomeController.index') // make sure binding is fine
 
-const result = Ioc.executeBinding('App/Http/Controllers/HomeController.index')
+const result = resolver.executeBinding('App/Http/Controllers/HomeController.index')
 console.log(result)
 ```
 
@@ -74,7 +74,7 @@ You can also pass data when executing a binding. Data is passed as an array, whi
 ```javascript
 const request = {} // your http request
 const response = {} // your http response
-const result = Ioc.executeBinding('App/Http/Controllers/HomeController.index', [request, response])
+const result = resolver.executeBinding('App/Http/Controllers/HomeController.index', [request, response])
 ```
 
 ## Passing custom scope
@@ -83,7 +83,7 @@ At times you may want to override the current instance of a module/class and pas
 
 ```javascript
 const modelInstance = {}
-const result = Ioc.executeBinding('App/Http/Model/Hooks/Password.encrypt', [], modelInstance)
+const result = resolver.executeBinding('App/Http/Model/Hooks/Password.encrypt', [], modelInstance)
 ```
 
 

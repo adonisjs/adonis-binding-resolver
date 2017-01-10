@@ -1,11 +1,13 @@
 'use strict'
 
+/* global describe, it, before */
+
+require('co-mocha')
+const path = require('path')
 const chai = require('chai')
 const assert = chai.assert
-const Resolver = require('../index')
-const path = require('path')
 const Ioc = require('adonis-fold').Ioc
-require('co-mocha')
+const Resolver = require('../src/index')
 
 describe('description', function () {
   before(function () {

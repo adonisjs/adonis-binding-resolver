@@ -9,4 +9,4 @@
  * file that was distributed with this source code.
 */
 
-module.exports = require('./src/Resolver')
+module.exports = require('./Resolver')

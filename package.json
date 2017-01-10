@@ -1,45 +1,37 @@
 {
   "name": "adonis-binding-resolver",
-  "version": "1.0.1",
-  "description": "Resolves a closure or adonis ioc container binding transparently",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm run lint && _mocha tests",
-    "lint": "standard src/*.js tests/*.js"
-  },
-  "standard": {
-    "global": [
-      "describe",
-      "it",
-      "before"
-    ]
-  },
+  "version": "1.0.2",
+  "description": "Resolves a closure or AdonisJs IoC Container binding transparently.",
   "keywords": [
     "adonis",
     "adonisjs",
     "adonis-ioc"
   ],
-  "author": "adonisjs,amanvirk",
+  "author": "Harminder Virk <virk@adonisjs.com>",
+  "contributors": [
+    "Romain Lanz <romain.lanz@slynova.ch>"
+  ],
   "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm run lint && _mocha tests",
+    "lint": "standard src/*.js tests/*.js"
+  },
   "dependencies": {
     "node-exceptions": "^1.0.3"
   },
   "devDependencies": {
-    "adonis-fold": "^3.0.2",
+    "adonis-fold": "^3.0.3",
     "chai": "^3.5.0",
     "co-mocha": "^1.1.3",
-    "mocha": "^3.0.2",
+    "mocha": "^3.2.0",
     "standard": "^8.6.0"
-  },
-  "directories": {
-    "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adonisjs/adonis-binding-resolver.git"
+    "url": "https://github.com/adonisjs/adonis-binding-resolver.git"
   },
   "bugs": {
     "url": "https://github.com/adonisjs/adonis-binding-resolver/issues"
-  },
-  "homepage": "https://github.com/adonisjs/adonis-binding-resolver#readme"
+  }
 }

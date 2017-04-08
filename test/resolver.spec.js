@@ -106,7 +106,7 @@ test.group('Resolver', (group) => {
     fold.Ioc.bind('Adonis/Src/Foo', function () {
       return fooInstance
     })
-    assert.deepEqual(resolver.resolveFunc('Adonis/Src/Foo.bar'), {instance: fooInstance, isClosure: false, method: 'bar'})
+    assert.deepEqual(resolver.resolveFunc('Adonis/Src/Foo.bar'), {instance: fooInstance, isClosure: false, method: fooInstance.bar})
   })
 
   test('throw exception when method does not exists', (assert) => {
@@ -142,7 +142,7 @@ test.group('Resolver', (group) => {
     fold.Ioc.bind('Adonis/Src.Foo', function () {
       return fooInstance
     })
-    assert.deepEqual(resolver.resolveFunc('Adonis/Src\\.Foo.bar'), {instance: fooInstance, isClosure: false, method: 'bar'})
+    assert.deepEqual(resolver.resolveFunc('Adonis/Src\\.Foo.bar'), {instance: fooInstance, isClosure: false, method: fooInstance.bar})
   })
 
   test('throw exception when binding is not a string, neither a callback', (assert) => {

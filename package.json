@@ -4,7 +4,13 @@
   "description": "Bindings resolver for AdonisJs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "posttest": "npm run coverage",
+    "test:local": "node --harmony-async-await ./node_modules/.bin/japa",
+    "test": "./node_modules/.bin/nyc npm run test:local",
+    "test:win": "node --harmony-async-await ./node_modules/japa-cli/index.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -22,6 +28,7 @@
   "homepage": "https://github.com/adonisjs/adonis-binding-resolver#readme",
   "devDependencies": {
     "adonis-fold": "git+https://github.com/poppinss/adonis-fold.git#dawn",
+    "coveralls": "^2.13.0",
     "cz-conventional-changelog": "^2.0.0",
     "japa": "^1.0.3",
     "japa-cli": "^1.0.1",

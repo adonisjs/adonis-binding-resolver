@@ -10,6 +10,19 @@ test.group('Resolver', (group) => {
     fold.Ioc._bindings = {}
   })
 
+  test('throw exception when directories are not defined', (assert) => {
+    const resolver = () => new Resolver()
+    assert.throw(resolver, 'Cannot initiate resolver without registering directories')
+  })
+
+  test('throw exception when namespace is not defined', (assert) => {
+    const directories = {
+      views: 'Views'
+    }
+    const resolver = () => new Resolver(directories)
+    assert.throw(resolver, 'Cannot initiate resolver without registering appNamespace')
+  })
+
   test('register directories hash', (assert) => {
     const directories = {
       views: 'Views'

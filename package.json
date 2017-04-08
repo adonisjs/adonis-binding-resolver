@@ -1,0 +1,35 @@
+{
+  "name": "adonis-binding-resolver",
+  "version": "2.0.0",
+  "description": "Bindings resolver for AdonisJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adonisjs/adonis-binding-resolver.git"
+  },
+  "keywords": [
+    "adonisjs",
+    "ioc"
+  ],
+  "author": "adonisjs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adonisjs/adonis-binding-resolver/issues"
+  },
+  "homepage": "https://github.com/adonisjs/adonis-binding-resolver#readme",
+  "devDependencies": {
+    "adonis-fold": "git+https://github.com/poppinss/adonis-fold.git#dawn",
+    "cz-conventional-changelog": "^2.0.0",
+    "japa": "^1.0.3",
+    "japa-cli": "^1.0.1",
+    "nyc": "^10.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
